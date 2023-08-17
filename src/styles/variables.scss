@@ -1,0 +1,15 @@
+@charset 'utf-8';
+
+// layout
+@use 'layout/header.scss';
+@use 'layout/popup.scss';
+@use 'layout/page.scss';
+@use 'layout/footer.scss';
+
+// base
+@use 'base/reset.scss';
+@use 'base/font.scss';
+@use 'base/common.scss';
+
+// page
+@use 'pages/main.scss';

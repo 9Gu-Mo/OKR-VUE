@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+html, body {
+    font-family: "Noto Sans KR",sans-serif !important;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul, li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+/* Custom */
+html {font-family: sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+a {background-color: transparent; color: inherit; text-decoration: none;}
+a:active, a:hover {outline: 0;}
+p{outline: none;}
+img {border: 0; display: block;}
+button {cursor: pointer; background: none;}
+select {font: inherit; background: none;}
+select:hover {cursor: pointer;}
+textarea {padding: 0;}
+input {-webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; outline: none;}
+input::-ms-clear {display: none;}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none; -moz-appearance: none; appearance: none;}
+input::-webkit-input-placeholder {line-height: inherit;}
+input::-ms-clear,input::-ms-reveal {display: none; width : 0; height: 0;}
+input::-webkit-search-decoration, input::-webkit-search-cancel-button, input::-webkit-search-results-button, input::-webkit-search-results-decoration{ display: none; }
+fieldset {border: 0;padding: 0;margin: 0;min-width: 0;}
+input[type=button]{background-color: transparent;}
+b{font-weight: inherit;}
+i{font-style: normal;}

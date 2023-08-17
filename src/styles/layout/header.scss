@@ -1,0 +1,154 @@
+// header
+.header {
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    z-index: 10;
+    min-width: 1240px;
+    .hWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 10px;
+        .hLeft {
+            display: flex;
+            align-items: center;
+            .hLogo {
+                a {
+                    display: block;
+                    width: 150px;
+                    height: 26px;
+                    background-image: url('/src/assets/images/top_logo_pc_wh.png');
+                }
+            }
+        }
+        .hRight {
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    a {
+                        margin-left: 30px;
+                        display: block;
+                        position: relative;
+                        width: 30px;
+                        height: 30px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: auto;
+                    }
+                    &:first-child {
+                        a {
+                            margin-left: 0;
+                            background-image: url('/src/assets/images/icon/top_mypage_wh.png');
+                        }
+                    }
+                    &:nth-child(2) {
+                        a {
+                            background-image: url('/src/assets/images/icon/top_search_wh.png');
+                        }
+                    }
+                    &:nth-child(3) {
+                        a {
+                            background-image: url('/src/assets/images/icon/top_wish_wh.png');
+                        }
+                    }
+                    &:last-child {
+                        a {
+                            background-image: url('/src/assets/images/icon/top_cart_wh.png');
+                        }
+                    }
+                    &.login {
+                        a {
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                right: -5px;
+                                width: 5px;
+                                height: 5px;
+                                background-color: red;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .gnb {
+        margin-left: 35px;
+        text-transform: uppercase;
+        height: 98px;
+        line-height: 98px;
+        ul {
+            display: flex;
+            align-items: center;
+            li {
+                padding: 0 20px;
+                a {
+                    position: relative;
+                    color: #fff;
+                    font-weight: bold;
+                    transition: all 0.3s;
+                    display: block;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+    &.active {
+        background-color: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        .hWrap {
+            .hLeft {
+                .hLogo {
+                    a {
+                        background-image: url('/src/assets/images/top_logo_pc.png');
+                    }
+                }
+            }
+            .hRight {
+                ul {
+                    li {
+                        &:first-child {
+                            a {
+                                background-image: url('/src/assets/images/icon/top_mypage.png');
+                            }
+                        }
+                        &:nth-child(2) {
+                            a {
+                                background-image: url('/src/assets/images/icon/top_search.png');
+                            }
+                        }
+                        &:nth-child(3) {
+                            a {
+                                background-image: url('/src/assets/images/icon/top_wish.png');
+                            }
+                        }
+                        &:last-child {
+                            a {
+                                background-image: url('/src/assets/images/icon/top_cart.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .gnb {
+            ul {
+                li {
+                    a {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}

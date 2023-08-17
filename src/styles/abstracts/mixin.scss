@@ -1,0 +1,72 @@
+// 말줄임 mixin
+@mixin ellipsis($line: 1) {
+    @if ($line == 1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $line;
+    }
+}
+
+// flex 공통화
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+// IR
+@mixin blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+}
+
+// 메인페이지 백그라운드 이미지 mixin
+@mixin mainBg($name, $path: "/images/main", $format: "jpg") {
+    background-image: url("#{$path}#{$name}.#{$format}");
+}
+
+// 서브페이지 백그라운드 이미지 mixin
+@mixin subBg($name, $path: "/images/sub", $format: "jpg") {
+    background-image: url("#{$path}#{$name}.#{$format}");
+}
+
+// font-face 축약 mixin
+// @include font-face('font-family', '경로/파일명', font-weight, font-style, 확장자)
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + f.str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+        $format: if(map.has-key($extmods, $ext), map.get($formats, $ext), $ext);
+        $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: string.quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}

@@ -1,0 +1,77 @@
+@use '../abstracts/absForward.scss' as a;
+
+// 공통
+.wrap {
+    min-width: 1240px;
+    max-width: 1920px;
+    margin: 0 auto 100px;
+    position: relative;
+}
+
+// 슬라이드
+.swiper {
+    .swiper-slide {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// 상품 리스트
+.gd_list {
+    &_desc {
+        margin-top: 15px;
+    }
+    &_name {
+        font-size: 16px;
+        color: #1a1a1a;
+        line-height: 1.5;
+        position: relative;
+        width: 100%;
+        strong {
+            display: block;
+            width: calc(100% - 30px);
+            @include a.ellipsis(1);
+        }
+        &_like {
+            position: absolute;
+            top: 4px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: url('/src/assets/images/icon/ico_favItem.png') no-repeat center / contain;
+            &.on {
+                background-image: url('/src/assets/images/icon/ico_favItem-on.png');
+            }
+            span {
+                @include a.blind;
+            }
+        }
+    }
+    &_pri {
+        display: flex;
+        align-items: baseline;
+        margin-top: 5px;
+        &_sale {
+            font-size: 20px;
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-right: 7px;
+        }
+        &_price {
+            font-size: 16px;
+            color: #b9b9b9;
+            text-decoration: line-through;
+            margin-right: 7px;
+        }
+        &_disc {
+            font-size: 14px;
+            color: #c41e20;
+        }
+    }
+    &_rv {
+        font-size: 14px;
+        color: #b9b9b9;
+        margin-top: 12px;
+    }
+}
