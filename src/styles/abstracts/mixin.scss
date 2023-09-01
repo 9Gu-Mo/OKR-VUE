@@ -14,9 +14,15 @@
 }
 
 // flex 공통화
-@mixin flex {
-    display: flex;
-    align-items: center;
+@mixin flex($align: 1) {
+    @if ($align == 1) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    } @else {
+        display: flex;
+        align-items: center;
+    }
 }
 
 // IR

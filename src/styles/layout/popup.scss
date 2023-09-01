@@ -1,5 +1,6 @@
 // popup
 .dim {
+    display: none;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, .5);
@@ -8,6 +9,9 @@
     top: 0;
     left: 0;
     padding: 20px;
+    &.on {
+        display: block;
+    }
     .pop {
         width: 500px;
         height: 500px;

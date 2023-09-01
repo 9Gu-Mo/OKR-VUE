@@ -2,24 +2,34 @@
 
 // 메인 페이지
 .main {
+    &_bn {
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
     &_sec {
-        max-width: 1580px;
         padding: 100px 20px 0;
-        margin: 0 auto;
+        background-color: #fff;
+        position: relative;
+        &_inner {
+            max-width: 1580px;
+            margin: 0 auto;
+        }
         .tit {
             text-align: center;
             font-weight: bold;
             font-size: 40px;
             margin-bottom: 50px;
             color: #000;
+            text-transform: uppercase
         }
         .gd_tab {
             &_btn {
-                @include a.flex;
+                @include a.flex(0);
                 li {
                     border: 1px solid #000;
                     color: #000;
-                    border-radius: 15px;
+                    border-radius: 20px;
                     margin-right: 10px;
                     transition: all 0.4s;
                     &:last-child {
@@ -27,7 +37,7 @@
                     }
                     a {
                         display: block;
-                        padding: 5px 15px;
+                        padding: 8px 15px;
                     }
                     &:hover, &.active {
                         background-color: #000;
@@ -39,9 +49,27 @@
                 margin-top: 30px;
                 ul {
                     display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    height: 650px;
+                    align-content: baseline;
+                    li:not(.gd_tab_con_slide) {
+                        width: 14.5%;
+                        a {
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        &:nth-child(2n + 1) {
+                            margin-top: 10px;
+                        }
+                        &:nth-child(n + 1) {
+                            margin-left: 2.2%;
+                        }
+                    }
                 }
                 &_slide {
-                    width: 500px;
+                    width: 33%;
                     a {
                         img {
                             width: 100%;
@@ -58,6 +86,149 @@
                         }
                     }
                 }
+            }
+        }
+        .attach {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            &_img {
+                background: url('/src/assets/images/main/ex_img01.jpg') no-repeat left / 66% auto;
+                background-attachment: fixed;
+                width: 66%;
+                height: 800px;
+                overflow: hidden;
+            }
+            &_txt {
+                line-height: 1.8;
+                margin-left: 20px;
+                position: sticky;
+                top: 100px;
+                p {
+                    font-weight: bold;
+                    font-size: 24px;
+                }
+                span {
+                    font-size: 12px;
+                    color: #aaa;
+                    display: block;
+                    padding-top: 20px;
+                }
+                a {
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #000;
+                    margin-top: 35px;
+                    border-bottom: 1px solid #000;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    &_rv {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        li {
+            width: 49%;
+            height: 300px;
+            border: 1px solid #e9e9e9;
+            border-radius: 15px;
+            a {
+                font-size: 0;
+                display: block;
+                height: 100%;
+            }
+        }
+        &_img {
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            > div {
+                padding-bottom: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                transition: all 0.3s;
+                border-radius: 15px 0 0 15px;
+                span {
+                    @include a.blind;
+                }
+            }
+        }
+        &_con {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(100% - 300px);
+            height: 100%;
+            padding: 10px;
+            position: relative;
+            .tit {
+                position: relative;
+                margin-bottom: 10px;
+                line-height: 15px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #e5e5e5;
+                display: flex;
+                justify-content: space-between;
+                &_left {
+                    .pf {        
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 100%;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;            
+                        span {
+                            @include a.blind;
+                        }
+                    }
+                }
+                &_right {
+                    width: calc(100% - 45px);
+                    strong {
+                        display: block;
+                        font-size: 14px;
+                        color: #000;
+                        @include a.ellipsis(1);
+                        text-align: left;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .cont {
+                height: calc(100% - 120px);
+                strong {
+                    font-size: 14px;
+                    color: #1a1a1a;
+                    margin-bottom: 10px;
+                    line-height: 1.4;
+                    overflow: hidden;
+                    display: block;
+                    @include a.ellipsis(1);
+                    font-weight: 400;
+                }
+                p {
+                    font-size: 12px;
+                    color: #999;
+                    line-height: 1.5;
+                    letter-spacing: -0.5px;
+                    overflow-y: auto;
+                    height: 100%;
+                }
+            }
+            .info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 12px;
+                color: #999;
+                padding-top: 10px;
+                position: absolute;
+                bottom: 10px;
+                border-top: 1px solid #e5e5e5;
+                width: calc(100% - 20px);
             }
         }
     }

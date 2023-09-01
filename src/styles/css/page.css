@@ -1,0 +1,76 @@
+.wrap {
+  min-width: 1240px;
+  max-width: 1920px;
+  margin: 0 auto 100px;
+  position: relative;
+}
+
+.swiper .swiper-slide img {
+  width: 100%;
+}
+
+.gd_list_desc {
+  margin-top: 15px;
+}
+.gd_list_name {
+  font-size: 16px;
+  color: #1a1a1a;
+  line-height: 1.5;
+  position: relative;
+  width: 100%;
+}
+.gd_list_name strong {
+  display: block;
+  width: calc(100% - 30px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gd_list_name_like {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: url("/src/assets/images/icon/ico_favItem.png") no-repeat center/contain;
+}
+.gd_list_name_like.on {
+  background-image: url("/src/assets/images/icon/ico_favItem-on.png");
+}
+.gd_list_name_like span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+.gd_list_pri {
+  display: flex;
+  align-items: baseline;
+  margin-top: 5px;
+}
+.gd_list_pri_sale {
+  font-size: 20px;
+  color: #1a1a1a;
+  font-weight: 500;
+  margin-right: 7px;
+}
+.gd_list_pri_price {
+  font-size: 16px;
+  color: #b9b9b9;
+  text-decoration: line-through;
+  margin-right: 7px;
+}
+.gd_list_pri_disc {
+  font-size: 14px;
+  color: #c41e20;
+}
+.gd_list_rv {
+  font-size: 14px;
+  color: #b9b9b9;
+  margin-top: 12px;
+}
