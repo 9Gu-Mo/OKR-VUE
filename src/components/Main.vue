@@ -3,6 +3,16 @@
         <div class="main_bn">
             <swiper
                 :slides-per-view="1"
+                :effect="'creative'"
+                :creativeEffect="{
+                    prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                    },
+                    next: {
+                        translate: ['100%', 0, 0],
+                    },
+                }"
                 @swiper="onSwiper"
                 @slideChange="onSlideChange"
             >
@@ -182,8 +192,10 @@
 <script>
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide} from 'swiper/vue';
+import { EffectCreative } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination'
+import 'swiper/css/effect-creative'
 import { onMounted } from 'vue';
 import AOS from 'aos';
 
@@ -206,7 +218,8 @@ export default {
         return {
             onSwiper,
             onSlideChange,
-            modules: [Pagination]
+            modules: [Pagination],
+            modules: [EffectCreative]
         }
     },
     data: () => ({

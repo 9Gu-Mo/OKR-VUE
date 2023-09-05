@@ -57,13 +57,16 @@
                                             <swiper
                                                 :slides-per-view="3"
                                                 :space-between="20"
-                                                :loop="true"
                                                 @swiper="onSwiper"
                                                 @slideChange="onSlideChange"
                                             >
                                                 <swiper-slide v-for="(el, sSlide) in searchSlide" :key="sSlide">
                                                     <a href="#n">
                                                         <img :src="el.img">
+                                                        <div class="slide_hover">
+                                                            <h3>{{ el.name }}</h3>
+                                                            <p>{{ el.price }}</p>
+                                                        </div>
                                                     </a>
                                                 </swiper-slide>
                                             </swiper>
@@ -124,7 +127,7 @@ export default {
         rList: [
             {
                 rank: "1",
-                txt: "탕수육"
+                txt: "탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육탕수육"
             },
             {
                 rank: "2",
@@ -136,7 +139,7 @@ export default {
             },
             {
                 rank: "4",
-                txt: "양장피"
+                txt: "양장피양장피양장피양장피양장피양장피양장피양장피양장피양장피양장피양장피양장피"
             },
             {
                 rank: "5",
@@ -145,16 +148,44 @@ export default {
         ],
         searchSlide: [
             {
-                img: require("@/assets/images/common/main_reco01.jpg")
+                img: require("@/assets/images/common/main_reco01.jpg"),
+                name: "상품명1",
+                price: "15,000원"
             },
             {
-                img: require("@/assets/images/common/main_reco02.jpg")
+                img: require("@/assets/images/common/main_reco02.jpg"),
+                name: "상품명2",
+                price: "25,000원"
             },
             {
-                img: require("@/assets/images/common/main_reco01.jpg")
+                img: require("@/assets/images/common/main_reco01.jpg"),
+                name: "상품명3",
+                price: "35,000원"
             },
             {
-                img: require("@/assets/images/common/main_reco02.jpg")
+                img: require("@/assets/images/common/main_reco02.jpg"),
+                name: "상품명4",
+                price: "45,000원"
+            },
+            {
+                img: require("@/assets/images/common/main_reco01.jpg"),
+                name: "상품명5",
+                price: "55,000원"
+            },
+            {
+                img: require("@/assets/images/common/main_reco02.jpg"),
+                name: "상품명6",
+                price: "65,000원"
+            },
+            {
+                img: require("@/assets/images/common/main_reco01.jpg"),
+                name: "상품명7",
+                price: "75,000원"
+            },
+            {
+                img: require("@/assets/images/common/main_reco02.jpg"),
+                name: "상품명8",
+                price: "85,000원"
             },
         ]
     }),

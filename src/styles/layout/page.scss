@@ -17,6 +17,11 @@
     }
 }
 
+// 스크롤 제거
+.scrollFix {
+    overflow: hidden;
+}
+
 // 상품 리스트
 .gd_list {
     &_desc {
