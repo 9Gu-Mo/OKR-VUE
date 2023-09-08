@@ -422,6 +422,20 @@ export default {
         on() {
             this.isBind = !this.isBind
         }
+    },
+
+    mounted() {
+        // 헤더 특정 높이에서 클래스 추가
+        window.addEventListener('scroll', function() {
+            let scrollY = this.scrollY
+            let mTop = document.querySelector('.main_goods').offsetTop - 100;
+            let header = document.querySelector('.header');
+            if (scrollY > mTop) {
+                header.classList.add('active')
+            } else {
+                header.classList.remove('active')
+            }
+        })
     }
 }
 </script>

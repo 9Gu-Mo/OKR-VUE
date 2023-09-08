@@ -1,5 +1,5 @@
 <template>
-    <header class="header" :class="{active:isBind}">
+    <header class="header active" :class="{active:isBind}">
         <div class="hWrap">
             <div class="hLeft">
                 <div class="hLogo">
@@ -194,10 +194,6 @@ export default {
         setBind() {
             this.isBind = !this.isBind;
         } 
-    },
-
-    mounted() {
-        
     },
 
     setup() {

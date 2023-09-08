@@ -2,9 +2,10 @@ import { createWebHistory, createRouter } from "vue-router";
 
 // 연결할 각 컴포넌트 import
 import TestComponent from "@/components/TestComponent.vue";
-import TestComponent2 from "@/components/TestComponent2.vue";
-import TestComponent3 from "@/components/TestComponent3.vue";
+// import TestComponent2 from "@/components/TestComponent2.vue";
+// import TestComponent3 from "@/components/TestComponent3.vue";
 import Main from "@/components/Main.vue";
+import GoodsList from '@/components/sub/GoodsList.vue';
 
 // 라우터 경로 설계
 const routes = [
@@ -19,15 +20,20 @@ const routes = [
         component: TestComponent,
     },
     {
-        path: "/test2",
-        name: "TestComponent2",
-        component: TestComponent2
-    },
-    {
-        path: "/test3",
-        name: "TestComponent3",
-        component: TestComponent3
-    },
+        path: "/sub/GoodsList",
+        name: "GoodsList",
+        component: GoodsList
+    }
+    // {
+    //     path: "/test2",
+    //     name: "TestComponent2",
+    //     component: TestComponent2
+    // },
+    // {
+    //     path: "/test3",
+    //     name: "TestComponent3",
+    //     component: TestComponent3
+    // },
 ]
 
 // 라우터 생성
