@@ -33,10 +33,6 @@ export default {
         popOpen : false,
     }),
 
-    methods: {
-        
-    },
-
     mounted() {
         // 검색창 오픈
         let search = document.querySelector('#search');

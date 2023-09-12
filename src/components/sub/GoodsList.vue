@@ -1,7 +1,7 @@
 <template>
     <div class="sub">
         <div class="sub_wrap gdsList">
-            <div class="gdsList_filter active">
+            <div class="gdsList_filter">
                 <h3>FILTER</h3>
                 <ul class="gdsList_filter_wrap">
                     <li class="gdsList_filter_item js_filter-toggle" v-for="(el, index) in list" :key="index" :class="{ color: el.chkColor, on:isOpen }">
@@ -19,7 +19,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="gdsList_con active">
+            <div class="gdsList_con">
                 <div class="gdsList_con_banner">
                     <a href="#n" v-for="(el, index) in banner" :key="index">
                         <img :src="el.img" :alt="el.alt">
@@ -43,8 +43,9 @@
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
                     >
-                        <swiper-slide v-for="(el, filSlide) in filterSlide" :key="filSlide">
-                            <span>{{ el.filter }}</span>
+                        <swiper-slide v-for="(el, filSlide) in filterSlide" :key="filSlide" :class="{ colorChip: el.colorChip }" class="filter_add">
+                            <span :class="el.color">{{ el.filter }}</span>
+                            <button type="button" @click="remove"><span>필터 제거</span></button>
                         </swiper-slide>
                     </swiper>
                 </div>
@@ -234,6 +235,57 @@ export default {
             {
                 filter: "스키니",
             },
+            {
+                filter: "스트레이트",
+            },
+            {
+                filter: "스키니",
+            },
+            {
+                filter: "스트레이트",
+            },
+            {
+                filter: "스키니",
+            },
+            {
+                filter: "스트레이트",
+            },
+            {
+                filter: "스키니",
+            },
+            {
+                filter: "스트레이트",
+            },
+            {
+                filter: "스키니",
+            },
+            {
+                filter: "스트레이트",
+            },
+            {
+                filter: "스키니",
+            },
+            {
+                filter: "스트레이트",
+            },
+            {
+                filter: "스키니",
+            },
+            {
+                colorChip: true,
+                filter: "red",
+                color: "red"
+            },
+            {
+                colorChip: true,
+                filter: "blue",
+                color: "blue"
+            },
+            {
+                colorChip: true,
+                filter: "brown",
+                color: "brown"
+            },
         ],
         gdsList: [
             {
@@ -284,6 +336,22 @@ export default {
                 discount: "30%",
                 review: "5"
             },
+            {
+                img: require("@/assets/images/main/main_goodSilde02.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "115"
+            },
+            {
+                img: require("@/assets/images/main/main_goodSilde03.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "3,235"
+            },
         ]
     }),
 
@@ -291,6 +359,22 @@ export default {
         open() {
             this.isOpen = !this.isOpen;
         }
+    },
+
+    mounted() {
+        // filter on/off
+        let filter = document.querySelector('.gdsList_filter');
+        let contents = document.querySelector('.gdsList_con');
+        let fSwitch = document.querySelector('.filter_switch label input');
+        fSwitch.addEventListener('click', function() {
+            if(fSwitch.checked) {
+                filter.classList.add('active');
+                contents.classList.add('active');
+            } else {
+                filter.classList.remove('active');
+                contents.classList.remove('active');
+            }
+        })
     },
 
     setup() {

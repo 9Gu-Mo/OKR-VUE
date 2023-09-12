@@ -1,15 +1,18 @@
+@use '../abstracts/absForward.scss' as a;
+
 // 상품 리스트 페이지
 .gdsList_filter {
     width: 250px;
-    position: absolute;
     top: 0;
-    left: -450px;
-    transition: all 0.3s;
+    transition: all .5s;
     padding-right: 20px;
+    margin-left: -450px;
     opacity: 0;
     &.active {
         display: block;
-        left: 20px;
+        position: sticky;
+        margin-left: 0;
+        top: 150px;
         opacity: 1;
     }
     > h3 {
@@ -52,12 +55,12 @@
                             border-radius: 50%;
                             font-size: 0;
                             border: none;
-                            &.red { background-color: red; }
-                            &.blue { background-color: blue; }
-                            &.black { background-color: black; }
-                            &.green { background-color: green; }
-                            &.skyblue { background-color: skyblue; }
-                            &.brown { background-color: brown; }
+                            @at-root .red { background-color: red; }
+                            @at-root .blue { background-color: blue; }
+                            @at-root .black { background-color: black; }
+                            @at-root .green { background-color: green; }
+                            @at-root .skyblue { background-color: skyblue; }
+                            @at-root .brown { background-color: brown; }
                         }
                         input:checked + label {
                             background-image: url('/src/assets/images/icon/ico_color_selected.png');
@@ -139,10 +142,10 @@
 .gdsList_con {
     width: 100%;
     margin-left: 0;
-    transition: all 0.3s;
+    transition: all .5s;
     &.active {
         width: calc(100% - 300px);
-        margin-left: 300px;
+        // margin-left: 300px;
     }
     &_banner {
         display: flex;
@@ -245,6 +248,31 @@
                 position: relative;
                 transition: all 0.3s;
                 width: auto !important;
+                &.colorChip {
+                    font-size: 0;
+                    span {
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                    }
+                }
+                &:last-child {
+                    margin-right: 0 !important;
+                }
+                button {
+                    position: absolute;
+                    top: 50%;
+                    right: 7px;
+                    transform: translateY(-50%);
+                    width: 10px;
+                    height: 10px;
+                    background: url('/src/assets/images/icon/ico_close_black.png') no-repeat center / contain;
+                    margin-top: 1px;
+                    span {
+                        @include a.blind;
+                    }
+                }
             }
         }
     }
