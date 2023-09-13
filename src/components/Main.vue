@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main page">
         <div class="main_bn">
             <swiper
                 :slides-per-view="1"

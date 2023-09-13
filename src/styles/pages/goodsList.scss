@@ -223,20 +223,24 @@
     &_apply {
         margin: 10px 0;
         font-size: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         > button {
             font-size: 13px;
             color: #1a1a1a;
             font-weight: 500;
             background: url('/src/assets/images/icon/ico_refresh.png') no-repeat center left / 14px 17px;
-            display: inline-block;
+            // display: inline-block;
             padding: 2px 0 2px 20px;
-            vertical-align: middle;
+            // vertical-align: middle;
         }
         .swiper {
-            display: inline-block;
+            // display: inline-block;
             margin-left: 20px;
             width: calc(100% - 103px);
-            vertical-align: middle;
+            // vertical-align: middle;
+            margin: 0;
             .swiper-slide {
                 display: inline-block;
                 color: #1a1a1a;
@@ -248,6 +252,7 @@
                 position: relative;
                 transition: all 0.3s;
                 width: auto !important;
+                box-sizing: border-box;
                 &.colorChip {
                     font-size: 0;
                     span {

@@ -1,5 +1,5 @@
 <template>
-    <header class="header active" :class="{active:isBind}">
+    <header class="header" :class="{active:isBind}">
         <div class="hWrap">
             <div class="hLeft">
                 <div class="hLogo">

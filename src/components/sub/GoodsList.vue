@@ -1,11 +1,12 @@
 <template>
-    <div class="sub">
+    <div class="sub page">
         <div class="sub_wrap gdsList">
             <div class="gdsList_filter">
                 <h3>FILTER</h3>
                 <ul class="gdsList_filter_wrap">
                     <li class="gdsList_filter_item js_filter-toggle" v-for="(el, index) in list" :key="index" :class="{ color: el.chkColor, on:isOpen }">
-                        <p class="gdsList_filter_tit" @click="open">{{ el.tit }}</p>
+                        <!-- <p class="gdsList_filter_tit" @click="open">{{ el.tit }}</p> -->
+                        <p class="gdsList_filter_tit">{{ el.tit }}</p>
                         <div class="gdsList_filter_con">
                             <ul>
                                 <li v-for="(el2, index) in el.list2" :key="index">
@@ -38,8 +39,8 @@
                 <div class="gdsList_con_apply">
                     <button type="button">필터 초기화</button>
                     <swiper
-                        :slides-per-view="auto"
                         :space-between="5"
+                        :slides-per-view="auto"
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
                     >
@@ -375,6 +376,22 @@ export default {
                 contents.classList.remove('active');
             }
         })
+
+        // filter accordion
+        let filterTit = document.querySelectorAll('.gdsList_filter_tit');
+        for(let i = 0; i < filterTit.length; i++) {
+            filterTit[i].addEventListener('click', function(e) {
+                e.target.parentNode.classList.toggle('on');
+            })
+        }
+
+        // filter remove
+        let addFilter = document.querySelectorAll('.filter_add button')
+        for (let i = 0; i < addFilter.length; i++) {
+            addFilter[i].addEventListener('click', function(e) {
+                e.target.parentNode.style.display="none";
+            })
+        }
     },
 
     setup() {
