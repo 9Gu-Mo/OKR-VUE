@@ -1,0 +1,39 @@
+@use '../abstracts/absForward.scss' as a;
+
+// 상품 상세
+.prdDetail {
+    font-size: 0;
+    width: 100%;
+    &_left {
+        display: inline-block;
+        width: 500px;
+        vertical-align: top;
+        .swiper {
+            &-slide {
+                border-radius: 15px;
+                overflow: hidden;
+            }
+        }
+    }
+    &_thumb {
+        margin-top: 10px;
+        .swiper-slide {
+            box-sizing: border-box;
+            transition: all 0.3s;
+            &:hover {
+                opacity: 0.75;
+            }
+            &-active {
+                border: 2px solid #000;
+            }
+        }
+    }
+    &_right {
+        display: inline-block;
+        width: calc(100% - 600px);
+        height: 500px;
+        margin-left: 100px;
+        border: 1px solid #000;
+        vertical-align: top;
+    }
+}

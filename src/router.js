@@ -6,6 +6,7 @@ import TestComponent from "@/components/TestComponent.vue";
 // import TestComponent3 from "@/components/TestComponent3.vue";
 import Main from "@/components/Main.vue";
 import GoodsList from '@/components/sub/GoodsList.vue';
+import ProductDetail from '@/components/sub/ProductDetail.vue';
 
 // 라우터 경로 설계
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
         path: "/sub/GoodsList",
         name: "GoodsList",
         component: GoodsList
+    },
+    {
+        path: "/sub/ProductDetail",
+        name: "ProductDetail",
+        component: ProductDetail
     }
     // {
     //     path: "/test2",

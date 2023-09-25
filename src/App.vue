@@ -45,15 +45,15 @@ export default {
 
         // main, sub detect header 
         window.addEventListener('load', function() {
+            console.log("페이지 로드 시 출력")
             let page = document.querySelector('.page');
             let subHeader = page.parentNode.previousElementSibling;
             if(page.classList.contains('main')) {
                 console.log("메인 페이지");
             } else {
                 console.log("서브 페이지");
-                subHeader.classList.add('active')
+                subHeader.classList.add('subHeader')
             }
-            console.log("페이지 로드 시 출력")
         })
     }
 }

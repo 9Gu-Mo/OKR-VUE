@@ -58,7 +58,8 @@
                         <div class="gd_list_desc">
                             <div class="gd_list_name">
                                 <strong>{{ el.name }}</strong>
-                                <button type="button" @click="on" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button>
+                                <!-- <button type="button" @click="like()" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button> -->
+                                <button type="button" @click="like" class="gd_list_name_like" :index="index"><span>찜하기</span></button>
                             </div>
                             <div class="gd_list_pri">
                                 <p class="gd_list_pri_sale">{{ el.sale }}</p>
@@ -84,6 +85,7 @@ export default {
         SwiperSlide,
     },
     data: () => ({
+        // isBind: false,
         isOpen: false,
         list: [
             {
@@ -218,75 +220,11 @@ export default {
             },
         ],
         filterSlide: [
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                filter: "스트레이트",
-            },
-            {
-                filter: "스키니",
-            },
-            {
-                colorChip: true,
-                filter: "red",
-                color: "red"
-            },
-            {
-                colorChip: true,
-                filter: "blue",
-                color: "blue"
-            },
-            {
-                colorChip: true,
-                filter: "brown",
-                color: "brown"
-            },
+            { filter: "스트레이트", },
+            { filter: "스키니", },
+            { colorChip: true, filter: "red", color: "red" },
+            { colorChip: true, filter: "blue", color: "blue" },
+            { colorChip: true, filter: "brown", color: "brown" },
         ],
         gdsList: [
             {
@@ -295,7 +233,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "5"
+                review: "5",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde02.jpg"),
@@ -303,7 +241,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "5"
+                review: "5",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde03.jpg"),
@@ -311,7 +249,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "5"
+                review: "5",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde02.jpg"),
@@ -319,7 +257,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "5"
+                review: "5",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde03.jpg"),
@@ -327,7 +265,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "5"
+                review: "5",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde01.jpg"),
@@ -335,7 +273,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "5"
+                review: "5",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde02.jpg"),
@@ -343,7 +281,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "115"
+                review: "115",
             },
             {
                 img: require("@/assets/images/main/main_goodSilde03.jpg"),
@@ -351,7 +289,7 @@ export default {
                 sale: "39,000",
                 price: "49,000",
                 discount: "30%",
-                review: "3,235"
+                review: "3,235",
             },
         ]
     }),
@@ -359,6 +297,11 @@ export default {
     methods: {
         open() {
             this.isOpen = !this.isOpen;
+        },
+        like(e) {
+            const idx = e.target.getAttribute('index');
+            e.target.classList.toggle('on');
+            console.log("like 활성화 : " + idx)
         }
     },
 

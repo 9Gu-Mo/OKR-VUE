@@ -319,4 +319,52 @@
             }
         }
     }
+    &.subHeader {
+        background-color: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        .hWrap {
+            .hLeft {
+                .hLogo {
+                    a {
+                        background-image: url('/src/assets/images/top_logo_pc.png');
+                    }
+                }
+            }
+            .hRight {
+                > ul {
+                    > li {
+                        &:first-child {
+                            > a {
+                                background-image: url('/src/assets/images/icon/top_mypage.png');
+                            }
+                        }
+                        &:nth-child(2) {
+                            > a {
+                                background-image: url('/src/assets/images/icon/top_search.png');
+                            }
+                        }
+                        &:nth-child(3) {
+                            > a {
+                                background-image: url('/src/assets/images/icon/top_wish.png');
+                            }
+                        }
+                        &:last-child {
+                            > a {
+                                background-image: url('/src/assets/images/icon/top_cart.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .gnb {
+            ul {
+                li {
+                    a {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
 }
