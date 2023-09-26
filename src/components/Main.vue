@@ -218,8 +218,8 @@ export default {
         return {
             onSwiper,
             onSlideChange,
-            modules: [Pagination],
-            modules: [EffectCreative]
+            // modules: [Pagination],
+            // modules: [EffectCreative]
         }
     },
     data: () => ({

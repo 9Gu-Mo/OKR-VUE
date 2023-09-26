@@ -16,7 +16,7 @@
     "core-js": "^3.8.3",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "roboto-fontface": "*",
-    "swiper": "^9.3.1",
+    "swiper": "^10.3.0",
     "v-calendar": "^3.0.3",
     "vue": "^3.2.13",
     "vue-grid-layout": "^3.0.0-beta1",
@@ -47,7 +47,6 @@
     "react-dom": "^18.2.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
-    "storybook": "^7.3.2",
     "vue-cli-plugin-vuetify": "~2.5.8",
     "vue-loader": "^17.2.2",
     "webpack-plugin-vuetify": "^2.0.0-alpha.0"

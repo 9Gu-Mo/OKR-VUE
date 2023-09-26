@@ -19,11 +19,10 @@
         margin-top: 10px;
         .swiper-slide {
             box-sizing: border-box;
-            transition: all 0.3s;
             &:hover {
                 opacity: 0.75;
             }
-            &-active {
+            &-thumb-active {
                 border: 2px solid #000;
             }
         }
@@ -31,9 +30,117 @@
     &_right {
         display: inline-block;
         width: calc(100% - 600px);
-        height: 500px;
         margin-left: 100px;
-        border: 1px solid #000;
         vertical-align: top;
+    }
+    &_brand {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        h3 {
+            font-size: 18px;
+            padding-left: 25px;
+            font-weight: bold;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                background-color: #333;
+                border-radius: 100%;
+            }
+        }
+        button {
+            width: 25px;
+            height: 25px;
+            background: url('/src/assets/images/icon/ico_share.png') no-repeat center / contain;
+        }
+    }
+    &_name {
+        display: block;
+        margin-top: 10px;
+        font-size: 26px;
+        font-weight: 500;
+        color: #1a1a1a;
+    }
+    &_comp {
+        display: block;
+        margin-top: 10px;
+        color: #a1a1a1;
+        font-size: 18px;
+    }
+    &_price {
+        margin: 20px 0;
+        display: flex;
+        align-items: baseline;
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 20px;
+        &_sale {
+            font-size: 32px;
+            color: #000;
+            font-weight: 500;
+            span {
+                font-size: 20px;
+                padding-left: 3px;
+            }
+        }
+        &_normal {
+            color: #c2c2c2;
+            font-size: 20px;
+            text-decoration: line-through;
+            margin: 0 8px 0 5px;
+        }
+        &_per {
+            font-size: 32px;
+            color: #c41e20;
+        }
+    }
+    &_evt {
+        font-size: 13px;
+        color: #1a1a1a;
+        line-height: 20px;
+    }
+    &_rdo {
+        margin-top: 20px;
+        p {
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+        &_box {
+            font-size: 0;
+            margin-top: 10px;
+            .rdo {
+                display: inline-block;
+                margin: 0 5px 4px 0;
+                label {
+                    border: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                    font-size: 12px;
+                    color: #000;
+                    padding: 6px 5px;
+                    display: block;
+                    cursor: pointer;
+                }
+                input {
+                    &:checked + label {
+                        border-color: #000;
+                    }
+                    &:disabled + label {
+                        color: #e5e5e5;
+                    }
+                }
+            }
+        }
+        span {
+            display: block;
+            font-size: 13px;
+            color: #909090;
+            word-break: break-all;
+            margin-top: 5px;
+        }
     }
 }
