@@ -8,6 +8,11 @@
                         :modules="modules"
                         :navigation="true"
                         :thumbs="{ swiper: thumbsSwiper }"
+                        :autoplay="{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        }"
+                        :effect="'fade'"
                     >
                         <swiper-slide v-for="(el, prdSlide) in prdSlide" :key="prdSlide">
                             <a href="#n">
@@ -78,7 +83,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs'
-import { Navigation, Thumbs } from 'swiper/modules'
+import { Autoplay, Navigation, Thumbs, EffectFade } from 'swiper/modules'
 export default {
     name: 'ProductDetail',
     components: {
@@ -94,8 +99,7 @@ export default {
         return {
             thumbsSwiper,
             setThumbsSwiper,
-            // EffectFade,
-            modules: [Navigation, Thumbs],
+            modules: [ Autoplay, Navigation, Thumbs, EffectFade],
         }
     },
     data: () => ({

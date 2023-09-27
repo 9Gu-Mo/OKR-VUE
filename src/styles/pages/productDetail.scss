@@ -13,6 +13,34 @@
                 border-radius: 15px;
                 overflow: hidden;
             }
+            &-button-prev {
+                background: #fff url('/src/assets/images/icon/ico_arwPrev.png') no-repeat center / 12px 22px;
+                transition: all 0.2s ease;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+                &::after {
+                    content: '';
+                }
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
+            &-button-next {
+                background: #fff url('/src/assets/images/icon/ico_arwNext.png') no-repeat center / 12px 22px;
+                transition: all 0.2s ease;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+                &::after {
+                    content: '';
+                }
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
         }
     }
     &_thumb {
