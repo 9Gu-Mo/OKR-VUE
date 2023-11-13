@@ -5,7 +5,7 @@
     font-weight: 100;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-Thin.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-Thin.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-Thin.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-Thin.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-Thin.otf") format("opentype");
 }
@@ -14,7 +14,7 @@
     font-weight: 200;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-Light.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-Light.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-Light.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-Light.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-Light.otf") format("opentype");
 }
@@ -23,7 +23,7 @@
     font-weight: 300;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-DemiLight.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-DemiLight.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-DemiLight.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-DemiLight.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-DemiLight.otf") format("opentype");
 }
@@ -32,7 +32,7 @@
     font-weight: 400;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-Regular.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-Regular.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-Regular.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-Regular.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-Regular.otf") format("opentype");
 }
@@ -41,7 +41,7 @@
     font-weight: 400;
     font-style: normal;
     src: url("@/assets/fonts/Roboto/Roboto-Regular.eot?") format("eot"),
-    url("@/assets/fonts/Roboto/Roboto-Regular.woff2") format("woff2"),
+    url("@/assets/fonts/Roboto/Roboto-Regular.woff2") format("font-woff2"),
     url("@/assets/fonts/Roboto/Roboto-Regular.woff") format("woff"),
     url("@/assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
@@ -51,7 +51,7 @@
     font-weight: 500;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-Medium.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-Medium.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-Medium.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-Medium.otf") format("opentype");
 }
@@ -60,7 +60,7 @@
     font-weight: 500;
     font-style: normal;
     src: url("@/assets/fonts/Roboto/Roboto-Medium.eot") format("eot"),
-    url("@/assets/fonts/Roboto/Roboto-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/Roboto/Roboto-Medium.woff2") format("font-woff2"),
     url("@/assets/fonts/Roboto/Roboto-Medium.woff") format("woff"),
     url("@/assets/fonts/Roboto/Roboto-Medium.otf") format("opentype");
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
@@ -70,7 +70,7 @@
     font-weight: 700;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-Bold.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-Bold.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-Bold.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-Bold.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-Bold.otf") format("opentype");
 }
@@ -79,7 +79,7 @@
     font-weight: 700;
     font-style: normal;
     src: url("@/assets/fonts/Roboto/Roboto-Bold.eot") format("eot"),
-    url("@/assets/fonts/Roboto/Roboto-Bold.woff2") format("woff2"),
+    url("@/assets/fonts/Roboto/Roboto-Bold.woff2") format("font-woff2"),
     url("@/assets/fonts/Roboto/Roboto-Bold.woff") format("woff"),
     url("@/assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
@@ -89,7 +89,7 @@
     font-weight: 900;
     font-style: normal;
     src: url("@/assets/fonts/NotoSans/NotoSans-Black.eot?") format("eot"),
-    url("@/assets/fonts/NotoSans/NotoSans-Black.woff2") format("woff2"),
+    url("@/assets/fonts/NotoSans/NotoSans-Black.woff2") format("font-woff2"),
     url("@/assets/fonts/NotoSans/NotoSans-Black.woff") format("woff"),
     url("@/assets/fonts/NotoSans/NotoSans-Black.otf") format("opentype");
 }

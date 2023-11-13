@@ -171,4 +171,102 @@
             margin-top: 5px;
         }
     }
+    &_purc {
+        padding: 12px 16px;
+        background-color: #f7f7f7;
+        border-radius: 8px;
+        margin-top: 20px;
+        &_name {
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+        &_cnt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            &_inner {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                button {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #fff;
+                    border: 1px solid #e5e5e5;
+                    border-radius: 50%;
+                    position: relative;
+                    span {
+                        @include a.blind;
+                    }
+                    &:disabled {
+                        opacity: 0.5;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 12px;
+                        height: 1px;
+                        background-color: #000;
+                    }
+                    &.plus {
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 1px;
+                            height: 12px;
+                            background-color: #000;
+                        }
+                    }
+                }
+                > span {
+                    min-width: 20px;
+                    font-size: 16px;
+                    color: #000;
+                    text-align: center;
+                }
+            }
+            &_sum {
+                font-size: 16px;
+                color: #1a1a1a;
+            }
+        }
+    }
+    &_order {
+        font-size: 16px;
+        text-align: right;
+        margin-top: 10px;
+        span {
+            color: #ff752a;
+            font-size: 30px;
+            margin-left: 12px;
+        }
+    }
+    &_btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 30px;
+        gap: 10px;
+        a {
+            display: block;
+            font-size: 13px;
+            width: 200px;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #000;
+            color: #000;
+            &.solid {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
 }

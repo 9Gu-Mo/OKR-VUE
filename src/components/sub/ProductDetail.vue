@@ -70,6 +70,22 @@
                         </div>
                         <span>[필수] 옵션을 선택해 주세요</span>
                     </div>
+                    <div class="prdDetail_purc">
+                        <p class="prdDetail_purc_name">[2입기획] 고소한 손맛 두부</p>
+                        <div class="prdDetail_purc_cnt">
+                            <div class="prdDetail_purc_cnt_inner">
+                                <button type="button" class="minus" @click="cntDown"><span>감소</span></button>
+                                <span>{{ cnt }}</span>
+                                <button type="button" class="plus" @click="cntUp"><span>증가</span></button>
+                            </div>
+                            <span class="prdDetail_purc_cnt_sum">2,900</span>
+                        </div>
+                    </div>
+                    <p class="prdDetail_order">주문금액 <span>2,900</span>원</p>
+                    <div class="prdDetail_btn">
+                        <a href="#n" class="line">장바구니</a>
+                        <a href="#n" class="solid">바로구매</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -199,9 +215,24 @@ export default {
                 disabled: true,
             },
         ],
+        cnt: 0
     }),
 
     methods: {
+        cntUp: function() {
+            let minus = document.querySelector('.minus');
+            this.cnt++;
+            if(this.cnt > 0) {
+                minus.removeAttribute('disabled')
+            }
+        },
+        cntDown: function() {
+            let minus = document.querySelector('.minus');
+            this.cnt--;
+            if(this.cnt <= 0) {
+                minus.setAttribute('disabled', true);
+            } 
+        },
         
     },
 
@@ -210,7 +241,9 @@ export default {
         let sizeRdo = document.querySelectorAll('.size_rdo input');
         for(let i = 0; i < colorRdo.length; i++) {
             colorRdo[i].addEventListener('click', function() {
-                sizeRdo[i].disabled = false;
+                sizeRdo.forEach((element) => {
+                    element.disabled = false;
+                })
             })
         }
     },
