@@ -244,6 +244,13 @@
                             &:hover {
                                 opacity: 1;
                             }
+                            &_inner {
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
                         }
                     }
                 }

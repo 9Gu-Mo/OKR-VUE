@@ -35,12 +35,16 @@ export default {
 
     mounted() {
         // search open
-        let search = document.querySelector('#search');
+        let searchBtn = document.querySelector('#search');
+        let search = document.querySelector('.search');
         let html = document.querySelector('html');
-        let dim = document.querySelector('.dim')
-        search.addEventListener('click', function() {
+        let dim = document.querySelector('.dim');
+        let header = document.querySelector('.header');
+        searchBtn.addEventListener('click', function() {
             html.classList.toggle('scrollFix')
             dim.classList.toggle('on');
+            header.classList.toggle('active');
+            search.classList.toggle('active');
         })
 
         // main, sub detect header 
@@ -51,8 +55,8 @@ export default {
             if(page.classList.contains('main')) {
                 console.log("메인 페이지");
             } else {
-                console.log("서브 페이지");
                 subHeader.classList.add('subHeader')
+                console.log("서브 페이지");
             }
         })
     }

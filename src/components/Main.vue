@@ -169,7 +169,7 @@
                                     </div>
                                     <div class="tit_right">
                                         <strong>{{el.goodsTit}}</strong>
-                                        <div class="grade"></div>
+                                        <div class="grade" v-html="el.grade"></div>
                                     </div>
                                 </div>
                                 <div class="cont">
@@ -405,7 +405,8 @@ export default {
                 rvTit: "다른데보다 저렴하고 배송이 빨라요 ㅎㅎㅎㅎㅎ",
                 rvCon: "많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사",
                 userName: "구*모",
-                userDate: "2022.08.16"
+                userDate: "2022.08.16",
+                grade: "<span>1</span>"
             },
             {
                 rvImg: require("/src/assets/images/main/main_tab03.jpg"),
@@ -414,7 +415,8 @@ export default {
                 rvTit: "다른데보다 저렴하고 배송이 빨라요 ㅎㅎㅎㅎㅎ",
                 rvCon: "많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다",
                 userName: "구*모",
-                userDate: "2022.08.16"
+                userDate: "2022.08.16",
+                grade: "<span>2</span>"
             },
         ]
     }),
@@ -423,19 +425,5 @@ export default {
             this.isBind = !this.isBind
         }
     },
-
-    mounted() {
-        // 헤더 특정 높이에서 클래스 추가
-        window.addEventListener('scroll', function() {
-            let scrollY = this.scrollY
-            let mTop = document.querySelector('.main_goods').offsetTop - 100;
-            let header = document.querySelector('.header');
-            if (scrollY > mTop) {
-                header.classList.add('active')
-            } else {
-                header.classList.remove('active')
-            }
-        })
-    }
 }
 </script>

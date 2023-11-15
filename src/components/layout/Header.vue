@@ -22,7 +22,8 @@
                         <a href="#n"></a>
                     </li>
                     <li>
-                        <a href="#n" id="search" @click="setBind"></a>
+                        <!-- <a href="#n" id="search" @click="setBind"></a> -->
+                        <a href="#n" id="search"></a>
                         <div class="search" :class="{active:isBind}">
                             <div class="search_inner">
                                 <h2 class="search_txt">고객님<br>무엇을 찾으시나요?</h2>
@@ -64,8 +65,10 @@
                                                     <a href="#n">
                                                         <img :src="el.img">
                                                         <div class="slide_hover">
-                                                            <h3>{{ el.name }}</h3>
-                                                            <p>{{ el.price }}</p>
+                                                            <div class="slide_hover_inner">
+                                                                <h3>{{ el.name }}</h3>
+                                                                <p>{{ el.price }}</p>
+                                                            </div>
                                                         </div>
                                                     </a>
                                                 </swiper-slide>
@@ -208,5 +211,22 @@ export default {
             onSlideChange,
         }
     },
+
+    mounted() {
+        // 헤더 특정 높이에서 클래스 추가
+        window.addEventListener('scroll', function() {
+            let page = document.querySelector('.page')
+            if(page.classList.contains('main')) {
+                let scrollY = this.scrollY
+                let mTop = document.querySelector('.main_goods').offsetTop - 100;
+                let header = document.querySelector('.header');
+                if (scrollY > mTop) {
+                    header.classList.add('active')
+                } else {
+                    header.classList.remove('active')
+                }
+            }
+        })
+    }
 }
 </script>
