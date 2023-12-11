@@ -77,13 +77,6 @@
                     }
                     .swiper-pagination {
                         bottom: 110px;
-                        &-bullet {
-                            width: 15px;
-                            height: 15px;
-                            &-active {
-                                background-color: #1a1a1a;
-                            }
-                        }
                     }
                 }
             }
@@ -102,7 +95,6 @@
             }
             &_txt {
                 line-height: 1.8;
-                margin-left: 20px;
                 position: sticky;
                 top: 100px;
                 p {
@@ -122,6 +114,14 @@
                     margin-top: 35px;
                     border-bottom: 1px solid #000;
                     text-transform: uppercase;
+                }
+            }
+        }
+        &.main_goods {
+            .swiper {
+                padding-bottom: 50px;
+                &_-pagination {
+                    bottom: 0;
                 }
             }
         }

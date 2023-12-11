@@ -15,6 +15,7 @@
                 }"
                 @swiper="onSwiper"
                 @slideChange="onSlideChange"
+                :modules="modules"
             >
                 <swiper-slide v-for="(el, slide) in mainSlide" :key="slide">
                     <a href="#n">
@@ -22,14 +23,38 @@
                     </a>
                 </swiper-slide>
             </swiper>
+
+            <!-- <swiper
+                :slides-per-view="1"
+                :effect="'creative'"
+                :creativeEffect="{
+                    prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                    },
+                    next: {
+                        translate: ['100%', 0, 0],
+                    },
+                }"
+                @swiper="onSwiper"
+                @slideChange="onSlideChange"
+            >
+                <swiper-slide v-for="(el, slide) in mainSlide" :key="slide">
+                    <a href="#n">
+                        <img :src="el.img" alt="">
+                    </a>
+                </swiper-slide>
+            </swiper> -->
         </div>
         <div class="main_sec main_goods">
             <h2 class="tit">NEW</h2>
             <div class="main_sec_inner">
                 <swiper 
+                :modules="modules"
                 :slides-per-view="3"
                 :space-between="50"
                 :loop="true"
+                :pagination="true"
                 @swiper="onSwiper" 
                 @slideChange="onSlideChange"
                 >
@@ -40,7 +65,8 @@
                         <div class="gd_list_desc">
                             <div class="gd_list_name">
                                 <strong>{{ el.name }}</strong>
-                                <button type="button" @click="on" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button>
+                                <!-- <button type="button" @click="on" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button> -->
+                                <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
                             </div>
                             <div class="gd_list_pri">
                                 <p class="gd_list_pri_sale">{{ el.sale }}</p>
@@ -70,6 +96,7 @@
                                     :slides-per-view="1"
                                     :loop="true"
                                     :pagination="{ clickable: true }"
+                                    :navigation="true"
                                     @swiper="onSwiper" 
                                     @slideChange="onSlideChange"
                                 >
@@ -80,7 +107,7 @@
                                         <div class="gd_list_desc">
                                             <div class="gd_list_name">
                                                 <strong>{{ el.name }}</strong>
-                                                <button type="button" @click="on" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button>
+                                                <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
                                             </div>
                                             <div class="gd_list_pri">
                                                 <p class="gd_list_pri_sale">{{ el.sale }}</p>
@@ -100,7 +127,7 @@
                                     <div class="gd_list_desc">
                                         <div class="gd_list_name">
                                             <strong>{{ item.name }}</strong>
-                                            <button type="button" @click="on" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button>
+                                            <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
                                         </div>
                                         <div class="gd_list_pri">
                                             <p class="gd_list_pri_sale">{{ item.sale }}</p>
@@ -190,11 +217,11 @@
 </template>
 
 <script>
-import { Pagination } from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide} from 'swiper/vue';
-import { EffectCreative } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import 'swiper/css/effect-creative'
 import { onMounted } from 'vue';
 import AOS from 'aos';
@@ -218,8 +245,8 @@ export default {
         return {
             onSwiper,
             onSlideChange,
-            // modules: [Pagination],
             // modules: [EffectCreative]
+            modules: [Navigation, Pagination],
         }
     },
     data: () => ({
@@ -423,6 +450,13 @@ export default {
     methods: {
         on() {
             this.isBind = !this.isBind
+        },
+
+        // goods like check
+        like(e) {
+            const idx = e.target.getAttribute('index');
+            e.target.classList.toggle('on');
+            console.log("like 활성화 : " + idx)
         }
     },
 }

@@ -15,6 +15,15 @@
             width: 100%;
         }
     }
+    .swiper-pagination {
+        &-bullet {
+            width: 15px;
+            height: 15px;
+            &-active {
+                background-color: #1a1a1a;
+            }
+        }
+    }
 }
 
 // 스크롤 제거

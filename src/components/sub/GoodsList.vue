@@ -298,6 +298,8 @@ export default {
         open() {
             this.isOpen = !this.isOpen;
         },
+
+        // goods like check
         like(e) {
             const idx = e.target.getAttribute('index');
             e.target.classList.toggle('on');

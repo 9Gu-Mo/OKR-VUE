@@ -215,7 +215,7 @@ export default {
                 disabled: true,
             },
         ],
-        cnt: 0
+        cnt: 1
     }),
 
     methods: {
@@ -229,7 +229,7 @@ export default {
         cntDown: function() {
             let minus = document.querySelector('.minus');
             this.cnt--;
-            if(this.cnt <= 0) {
+            if(this.cnt <= 1) {
                 minus.setAttribute('disabled', true);
             } 
         },
