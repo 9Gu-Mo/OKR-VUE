@@ -1,6 +1,6 @@
 <template>
     <div class="sub page">
-        <div class="sub_wrap">
+        <div class="sub_wrap fl_dr_col">
             <div class="prdDetail">
                 <div class="prdDetail_left">
                     <swiper
@@ -74,7 +74,7 @@
                         <p class="prdDetail_purc_name">[2입기획] 고소한 손맛 두부</p>
                         <div class="prdDetail_purc_cnt">
                             <div class="prdDetail_purc_cnt_inner">
-                                <button type="button" class="minus" @click="cntDown"><span>감소</span></button>
+                                <button type="button" class="minus" @click="cntDown" disabled><span>감소</span></button>
                                 <span>{{ cnt }}</span>
                                 <button type="button" class="plus" @click="cntUp"><span>증가</span></button>
                             </div>
@@ -87,6 +87,59 @@
                         <a href="#n" class="solid">바로구매</a>
                     </div>
                 </div>
+            </div>
+            <div class="prdTab">
+                <ul class="prdTab_btn">
+                    <li v-for="(tab, index) in tabBtn" :key="index" @click.prevent="currentTab = index" :class="{'active' : currentTab === index}">{{ tab.name }}</li>
+                </ul>
+                <!-- 
+                    v-for와 v-if는 동시에 사용 할 수 없음 
+                    필요시, 레벨 분리 후 사용
+                -->
+                <!-- <div v-for="(tab, index) in tabCon" :key="index">
+                    <div v-if="currentTab === index">
+                        {{ tab.name }}
+                    </div>
+                </div> -->
+                <!-- 상품정보 -->
+                <div v-if="currentTab === 0">
+                    <div class="prdTab_con prdTab_con_img">
+                        <img :src="prdImg" alt="">
+                    </div>
+                </div>
+                
+                <!-- 구매정보 -->
+                <div v-if="currentTab === 1">
+                    <div class="prdTab_con">
+                        <h2 class="prdTab_con_tit">상품번호</h2>
+                        <span class="prdTab_con_serial">4795</span>
+
+                        <h2 class="prdTab_con_tit prdTab_con_tit_under">구매정보</h2>
+                        <p class="prdTab_con_subTit">상품정보제공고시</p>
+                        <table class="prdTab_con_tbl">
+                            <caption>상품정보제공고시</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr v-for="(el, index) in tbl" :key="index">
+                                    <th>{{ el.th }}</th>
+                                    <td>{{ el.td }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 상품후기 -->
+                <div v-if="currentTab === 2"></div>
+                
+                <!-- 상품문의 -->
+                <div v-if="currentTab === 3"></div>
+                
+                <!-- 배송/환불 -->
+                <div v-if="currentTab === 4"></div>
             </div>
         </div>
     </div>
@@ -119,6 +172,7 @@ export default {
         }
     },
     data: () => ({
+        prdImg: require('@/assets/images/common/prd_ex.jpg'),
         prdSlide: [
             {
                 img: require("@/assets/images/common/pd_slide01.jpg"),
@@ -215,7 +269,59 @@ export default {
                 disabled: true,
             },
         ],
-        cnt: 1
+        cnt: 1,
+        tabBtn: [
+            {
+                name: "상품정보"
+            },
+            {
+                name: "구매정보"
+            },
+            {
+                name: "상품후기"
+            },
+            {
+                name: "상품문의"
+            },
+            {
+                name: "배송/환불"
+            },
+        ],
+        currentTab: 0,
+        tbl: [
+            {
+                th: "제품명",
+                td: "제품 포장 라벨 참조"
+            },
+            {
+                th: "상품의 유형",
+                td: "상의 아우터"
+            },
+            {
+                th: "생산자 및 소재지(수입품의 경우 생산자, 수입자 및 제조국)",
+                td: "(주) 맑은농산 | 경기도 남양주시 진접읍 내각1로 73번길 67-19"
+            },
+            {
+                th: "원재료명 및 함량(농수산물의 원산지 표시에 관한 볍률에 따른 원산지 표시 포함)",
+                td: "상세 참조"
+            },
+            {
+                th: "영양성분(식품등의표시·광고에관한법률에 따른 영양성분 표시대상 식품에 한함)",
+                td: "상세 참조"
+            },
+            {
+                th: "유전자변형식품 여부",
+                td: "해당 없음"
+            },
+            {
+                th: "수입식품인 경우 수입신고 여부",
+                td: "해당 없음"
+            },
+            {
+                th: "소비자상담 관련 전화번호",
+                td: "010-1234-5678"
+            },
+        ]
     }),
 
     methods: {

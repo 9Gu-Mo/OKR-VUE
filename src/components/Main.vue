@@ -140,13 +140,103 @@
                             </li>
                         </ul>
                         <ul v-if="currentTab === 1">
-                            <li v-for="(item, index) in tabCon" :key="index">
-                                <p>{{ item.name }}</p>
+                            <li v-for="(item, index) in 1" :key="index" class="gd_tab_con_slide">
+                                <swiper
+                                    :modules="modules"
+                                    :slides-per-view="1"
+                                    :loop="true"
+                                    :pagination="{ clickable: true }"
+                                    :navigation="true"
+                                    @swiper="onSwiper" 
+                                    @slideChange="onSlideChange"
+                                >
+                                    <swiper-slide v-for="(el, slide) in tabSlide1" :key="slide">
+                                        <a href="#n">
+                                            <img :src="el.img" alt="">
+                                        </a>
+                                        <div class="gd_list_desc">
+                                            <div class="gd_list_name">
+                                                <strong>{{ el.name }}</strong>
+                                                <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
+                                            </div>
+                                            <div class="gd_list_pri">
+                                                <p class="gd_list_pri_sale">{{ el.sale }}</p>
+                                                <p class="gd_list_pri_price">{{ el.price }}</p>
+                                                <p class="gd_list_pri_disc">{{ el.discount }}</p>
+                                            </div>
+                                            <p class="gd_list_rv">리뷰 {{ el.review }}<span>건</span></p>
+                                        </div>
+                                    </swiper-slide>
+                                </swiper>
+                            </li>
+                            <li v-for="(item, index) in tabCon2" :key="index">
+                                <div>
+                                    <a href="#n">
+                                        <img :src="item.img" alt="">
+                                    </a>
+                                    <div class="gd_list_desc">
+                                        <div class="gd_list_name">
+                                            <strong>{{ item.name }}</strong>
+                                            <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
+                                        </div>
+                                        <div class="gd_list_pri">
+                                            <p class="gd_list_pri_sale">{{ item.sale }}</p>
+                                            <p class="gd_list_pri_price">{{ item.price }}</p>
+                                            <p class="gd_list_pri_disc">{{ item.discount }}</p>
+                                        </div>
+                                        <p class="gd_list_rv">리뷰 {{ item.review }}<span>건</span></p>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                         <ul v-if="currentTab === 2">
-                            <li v-for="(item, index) in tabCon" :key="index">
-                                <p>{{ item.name }}</p>
+                            <li v-for="(item, index) in 1" :key="index" class="gd_tab_con_slide">
+                                <swiper
+                                    :modules="modules"
+                                    :slides-per-view="1"
+                                    :loop="true"
+                                    :pagination="{ clickable: true }"
+                                    :navigation="true"
+                                    @swiper="onSwiper" 
+                                    @slideChange="onSlideChange"
+                                >
+                                    <swiper-slide v-for="(el, slide) in tabSlide1" :key="slide">
+                                        <a href="#n">
+                                            <img :src="el.img" alt="">
+                                        </a>
+                                        <div class="gd_list_desc">
+                                            <div class="gd_list_name">
+                                                <strong>{{ el.name }}</strong>
+                                                <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
+                                            </div>
+                                            <div class="gd_list_pri">
+                                                <p class="gd_list_pri_sale">{{ el.sale }}</p>
+                                                <p class="gd_list_pri_price">{{ el.price }}</p>
+                                                <p class="gd_list_pri_disc">{{ el.discount }}</p>
+                                            </div>
+                                            <p class="gd_list_rv">리뷰 {{ el.review }}<span>건</span></p>
+                                        </div>
+                                    </swiper-slide>
+                                </swiper>
+                            </li>
+                            <li v-for="(item, index) in tabCon3" :key="index">
+                                <div>
+                                    <a href="#n">
+                                        <img :src="item.img" alt="">
+                                    </a>
+                                    <div class="gd_list_desc">
+                                        <div class="gd_list_name">
+                                            <strong>{{ item.name }}</strong>
+                                            <button type="button" @click="like" class="gd_list_name_like"><span>찜하기</span></button>
+                                        </div>
+                                        <div class="gd_list_pri">
+                                            <p class="gd_list_pri_sale">{{ item.sale }}</p>
+                                            <p class="gd_list_pri_price">{{ item.price }}</p>
+                                            <p class="gd_list_pri_disc">{{ item.discount }}</p>
+                                        </div>
+                                        <p class="gd_list_rv">리뷰 {{ item.review }}<span>건</span></p>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -390,6 +480,74 @@ export default {
                 review: "5"
             },
         ],
+        tabCon2: [
+            {
+                img: require("@/assets/images/main/main_tab01.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+            {
+                img: require("@/assets/images/main/main_tab02.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+            {
+                img: require("@/assets/images/main/main_tab03.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+            {
+                img: require("@/assets/images/main/main_tab01.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+            {
+                img: require("@/assets/images/main/main_tab02.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+        ],
+        tabCon3: [
+            {
+                img: require("@/assets/images/main/main_tab01.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+            {
+                img: require("@/assets/images/main/main_tab01.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+            {
+                img: require("@/assets/images/main/main_tab02.jpg"),
+                name: "[남녀공용]배색 윈드브레이커1",
+                sale: "39,000",
+                price: "49,000",
+                discount: "30%",
+                review: "5"
+            },
+        ],
         tabSlide1: [
             {
                 img: require("@/assets/images/main/main_tabSlide01.jpg"),
@@ -433,7 +591,7 @@ export default {
                 rvCon: "많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사",
                 userName: "구*모",
                 userDate: "2022.08.16",
-                grade: "<span>1</span>"
+                grade: ""
             },
             {
                 rvImg: require("/src/assets/images/main/main_tab03.jpg"),
@@ -443,7 +601,7 @@ export default {
                 rvCon: "많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다많이 저렴해져서 부담없이 구매했습니다 가격대비 성능이 진짜 혜자네요 헬스할때 편해서 좋아요 재구매의사 많이 저렴해져서 부담없이 구매했습니다",
                 userName: "구*모",
                 userDate: "2022.08.16",
-                grade: "<span>2</span>"
+                grade: ""
             },
         ]
     }),

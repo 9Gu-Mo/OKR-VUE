@@ -103,5 +103,9 @@
         padding: 0 20px;
         max-width: 1580px;
         position: relative;
+        &.fl_dr_col {
+            flex-direction: column;
+            gap: 100px;
+        }
     }
 }

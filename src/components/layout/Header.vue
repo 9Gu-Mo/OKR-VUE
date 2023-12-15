@@ -30,6 +30,7 @@
                                 <div class="search_inpWrap">
                                     <input type="search" class="inp search_inp">
                                     <span data-placeholder="상품을 찾아보세요."></span>
+                                    <font-awesome-icon icon="xmark" />
                                 </div>
                                 <div class="search_con">
                                     <div class="search_keyword">

@@ -78,6 +78,13 @@
                     .swiper-pagination {
                         bottom: 110px;
                     }
+                    .swiper-button-prev,
+                    .swiper-button-next {
+                        color: #1a1a1a;
+                        margin-top: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
                 }
             }
         }
