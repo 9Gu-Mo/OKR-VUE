@@ -289,6 +289,11 @@
                 font-weight: bold;
             }
         }
+        &_wrap {
+            position: sticky;
+            top: 98px;
+            z-index: 10;
+        }
     }
     &_con {
         margin-top: 30px;
@@ -305,6 +310,14 @@
                 padding-bottom: 20px;
                 margin-bottom: 20px;
                 border-bottom: 2px solid #000;
+            }
+            span {
+                font-size: 14px;
+                color: #858585;
+                font-weight: 400;
+                em {
+                    color: #c41e20;
+                }
             }
         }
         &_serial {
@@ -337,6 +350,263 @@
             th {
                 background-color: #fafafa;
                 color: #858585;
+            }
+        }
+        &_rating {
+            display: flex;
+            background-color: #fafafa;
+            border-radius: 8px;
+            align-items: center;
+            margin-top: 30px;
+            height: 220px;
+            // border: 1px solid #000;
+            &_left {
+                width: 100%;
+                position: relative;
+                strong {
+                    display: block;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    em {
+                        font-size: 16px;
+                        color: #adadad;
+                        font-weight: 400;
+                        word-break: keep-all;
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: 170px;
+                    background-color: #000;
+                }
+            }
+            &_right {
+                width: 100%;
+                padding: 0 50px;
+            }
+        }
+        &_grade {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &_star {
+                margin-right: 10px;
+                color: #c41e20;
+            }
+            &_num {
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                .today_score {
+                    font-size: 32px;
+                    color: #1a1a1a;
+                }
+                .total_score {
+                    font-size: 24px;
+                    color: #c2c2c2;
+                    margin-left: 4px;
+                }
+            }
+        }
+        &_pgBar {
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                .fa-star {
+                    color: #c41e20;
+                    font-size: 14px;
+                }
+                em {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #1a1a1a;
+                    margin-left: 4px;
+                }
+                .progress {
+                    width: 79%;
+                    height: 8px;
+                    position: relative;
+                    background-color: #ccc;
+                    border-radius: 4px;
+                    margin-left: 4px;
+                    span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        border-radius: 4px;
+                        background: url('/src/assets/images/common/progress.png') repeat-x;
+                    }
+                }
+            }
+        }
+        &_review {
+            margin: 40px auto 0;
+            &_filter {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #000;
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+                > div {
+                    display: flex;
+                    align-items: center;
+                    .chk {
+                        position: relative;
+                        label {
+                            padding: 0 13px 0 26px;
+                            position: relative;
+                            font-size: 14px;
+                            color: #000;
+                            cursor: pointer;
+                            background: url('/src/assets/images/icon/ico-chk-off.png') no-repeat left center;
+                        }
+                        input {
+                            &:checked + label {
+                                background-image: url('/src/assets/images/icon/ico-chk-on.png');
+                            }
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 60%;
+                            right: 0;
+                            transform: translateY(-50%);
+                            width: 1px;
+                            height: 15px;
+                            background-color: #000;
+                        }
+                    }
+                    .rdo {
+                        margin-left: 13px;
+                        display: flex;
+                        align-items: center;
+                        label {
+                            font-size: 14px;
+                            color: #adadad;
+                            padding-left: 20px;
+                            position: relative;
+                            cursor: pointer;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                left: 10%;
+                                transform: translateY(-50%);
+                                width: 3px;
+                                height: 3px;
+                                background-color: #e5e5e5;
+                                border-radius: 50%;
+                            }
+                        }
+                        input {
+                            &:checked + label {
+                                color: #000;
+                                font-weight: bold;
+                                &::before {
+                                    background-color: #000;
+                                }
+                            }
+                        }
+                        div + div {
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+            &_list {
+                li {
+                    border-bottom: 1px solid #f5f5f5;
+                    padding: 20px 0;
+                }
+            }
+            &_detail {
+                font-size: 0;
+                position: relative;
+                .top {
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        font-size: 14px;
+                        color: #c41e20;
+                    }
+                    .name {
+                        font-size: 14px;
+                        color: #000;
+                        margin-left: 8px;
+                    }
+                    .date {
+                        font-size: 14px;
+                        color: #adadad;
+                        margin-left: 8px;
+                    }
+                }
+                .bot {
+                    position: relative;
+                    margin-top: 20px;
+                    .left {
+                        width: calc(100% - 140px);
+                        display: inline-block;
+                        vertical-align: middle;
+                        p {
+                            font-size: 14px;
+                            color: #858585;
+                            &.txt {
+                                margin-top: 5px;
+                                font-size: 17px;
+                                color: #000;
+                                @include a.ellipsis(1)
+                            }
+                        }
+                        .thumbUp {
+                            color: #000;
+                            font-size: 14px;
+                            margin-top: 20px;
+                            span {
+                                color: #c41e20;
+                                margin-left: 6px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .mid {
+                        display: inline-block;
+                        vertical-align: middle;
+                        button {
+                            width: 24px;
+                            height: 20px;
+                            background: url('/src/assets/images/icon/ico_arwFilter.png') no-repeat center;
+                            span {
+                                @include a.blind;
+                            }
+                        }
+                    }
+                    .right {
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        a {
+                            width: 90px;
+                            height: 90px;
+                            border-radius: 8px;
+                            box-sizing: border-box;
+                            border: 1px solid #000;
+                            display: block;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

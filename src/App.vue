@@ -21,7 +21,6 @@
 import Header from "@/components/layout/Header.vue";
 import Footer from "@/components/layout/Footer.vue";
 import ModalPop from "@/components/layout/ModalPop.vue";
-
 export default {
     name: 'App',
     components: {
