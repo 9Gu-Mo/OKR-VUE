@@ -216,7 +216,9 @@
                 </div>
                 
                 <!-- 상품문의 -->
-                <div v-if="currentTab === 3"></div>
+                <div v-if="currentTab === 3">
+                    깃 되돌리기 테스트
+                </div>
                 
                 <!-- 배송/환불 -->
                 <div v-if="currentTab === 4"></div>
