@@ -33,6 +33,10 @@ export default {
     }),
 
     mounted() {
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log("app.vue 마운트 테스트")
+        })
+
         // search open
         let searchBtn = document.querySelector('#search');
         let search = document.querySelector('.search');
@@ -58,7 +62,7 @@ export default {
                 console.log("서브 페이지");
             }
         })
-    }
+    },
 }
 </script>
 

@@ -605,6 +605,7 @@ export default {
             },
         ]
     }),
+
     methods: {
         on() {
             this.isBind = !this.isBind

@@ -180,18 +180,18 @@
                                 </div>
                             </div>
                             <ul class="prdTab_con_review_list">
-                                <li>
+                                <li v-for="(rvList, index) in review" :key="index">
                                     <div class="prdTab_con_review_detail">
                                         <div class="top">
-                                            <font-awesome-icon :icon="star.name" v-for="(star, index) in grade" :key="index" />
-                                            <span class="name">guwo****</span>
-                                            <em class="date">2023-12-29</em>
+                                            <font-awesome-icon :icon="star.name" v-for="(star, index) in rvList.rvGrade" :key="index" />
+                                            <span class="name">{{ rvList.name }}</span>
+                                            <em class="date">{{ rvList.date }}</em>
                                         </div>
                                         <div class="bot">
                                             <div class="left">
-                                                <p>[2입기획] 고소한 손맛 두부</p>
+                                                <p>{{ rvList.subTit }}</p>
                                                 <p class="txt">
-                                                    맛있어서 재구매 했는데 ~~ 이상하게 눅눅하고 딱딱한 느낌이 드네여ㅠㅜ맛있어서 재구매 했는데 ~~ 이상하게 눅눅하고 딱딱한 느낌이 드네여ㅠㅜ맛있어서 재구매 했는데 ~~ 이상하게 눅눅하고 딱딱한 느낌이 드네여ㅠㅜ
+                                                    {{ rvList.txt }}
                                                 </p>
                                                 <button type="button" class="thumbUp">
                                                     <font-awesome-icon icon="thumbs-up" />
@@ -216,7 +216,8 @@
                 </div>
                 
                 <!-- 상품문의 -->
-                <div v-if="currentTab === 3"></div>
+                <div v-if="currentTab === 3">
+                </div>
                 
                 <!-- 배송/환불 -->
                 <div v-if="currentTab === 4"></div>
@@ -465,6 +466,55 @@ export default {
             {
                 name: "star-half-stroke"
             },
+        ],
+        
+        review: [
+            {
+                name: "guwo****",
+                date: "2023-01-01",
+                subTit: "[2입기획] 고소한 손맛 두부",
+                txt: "맛있어서 재구매 했는데 ~~ 이상하게 눅눅하고 딱딱한 느낌이 드네여ㅠㅜ맛있어서 재구매 했는데 ~~ 이상하게 눅눅하고 딱딱한 느낌이 드네여ㅠㅜ맛있어서 재구매 했는데 ~~ 이상하게 눅눅하고 딱딱한 느낌이 드네여ㅠㅜ",
+                rvGrade: [
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star-half-stroke"
+                    },
+                ]
+            },
+            {
+                name: "guwo****",
+                date: "2023-01-02",
+                subTit: "[2입기획] 고소한 손맛 두부",
+                txt: "맛있어서 재구매 했는데 ~~",
+                rvGrade: [
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                    {
+                        name: "star"
+                    },
+                ]
+            }
         ]
     }),
 
@@ -472,22 +522,24 @@ export default {
         cntUp: function() {
             let minus = document.querySelector('.minus');
             let price = 2900;
-            let priceLocale = price.toLocaleString('ko-KR');
+            // let priceLocale = price.toLocaleString('ko-KR');
             this.cnt++;
             if(this.cnt > 0) {
                 minus.removeAttribute('disabled')
             }
-            this.sum = parseInt(this.cnt * priceLocale);
+            // this.sum = parseInt(this.cnt * priceLocale);
+            this.sum = this.cnt * price;
         },
         cntDown: function() {
             let minus = document.querySelector('.minus');
             let price = 2900;
-            let priceLocale = price.toLocaleString('ko-KR');
+            // let priceLocale = price.toLocaleString('ko-KR');
             this.cnt--;
             if(this.cnt <= 1) {
                 minus.setAttribute('disabled', true);
             } 
-            this.sum = parseInt(this.sum - priceLocale);
+            // this.sum = parseInt(this.sum - priceLocale);
+            this.sum = this.sum - price;
         },
     },
 

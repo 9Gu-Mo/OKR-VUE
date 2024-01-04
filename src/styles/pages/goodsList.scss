@@ -226,6 +226,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 27px;
         > button {
             font-size: 13px;
             color: #1a1a1a;
@@ -253,6 +254,7 @@
                 transition: all 0.3s;
                 width: auto !important;
                 box-sizing: border-box;
+                margin-right: 5px;
                 &.colorChip {
                     font-size: 0;
                     span {

@@ -37,16 +37,18 @@
                     </div>
                 </div>
                 <div class="gdsList_con_apply">
-                    <button type="button">필터 초기화</button>
+                    <button type="button" class="filter_clear">필터 초기화</button>
                     <swiper
                         :space-between="5"
                         :slides-per-view="auto"
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
+                        class="swiper_add_filter"
                     >
                         <swiper-slide v-for="(el, filSlide) in filterSlide" :key="filSlide" :class="{ colorChip: el.colorChip }" class="filter_add">
                             <span :class="el.color">{{ el.filter }}</span>
-                            <button type="button" @click="remove"><span>필터 제거</span></button>
+                            <!-- <button type="button" @click="remove"><span>필터 제거</span></button> -->
+                            <button type="button"><span>필터 제거</span></button>
                         </swiper-slide>
                     </swiper>
                 </div>
@@ -130,6 +132,7 @@ export default {
                     {
                         chkLabel: '스트레이트',
                         id: 'chk02-1',
+                        colorChip: 'test',
                     },
                     {
                         chkLabel: '스키니',
@@ -220,11 +223,13 @@ export default {
             },
         ],
         filterSlide: [
-            { filter: "스트레이트", },
-            { filter: "스키니", },
-            { colorChip: true, filter: "red", color: "red" },
-            { colorChip: true, filter: "blue", color: "blue" },
-            { colorChip: true, filter: "brown", color: "brown" },
+            // { filter: "스트레이트", },
+            // { filter: "스키니", },
+            // { colorChip: true, filter: "red", color: "red" },
+            // { colorChip: true, filter: "blue", color: "blue" },
+            // { colorChip: true, filter: "brown", color: "brown" },
+            // { colorChip: true, filter: "green", color: "green" },
+            // { filter: "태이퍼드", },
         ],
         gdsList: [
             {
@@ -308,10 +313,17 @@ export default {
     },
 
     mounted() {
-        // filter on/off
+        // variable gather
         let filter = document.querySelector('.gdsList_filter');
         let contents = document.querySelector('.gdsList_con');
         let fSwitch = document.querySelector('.filter_switch label input');
+        let filterTit = document.querySelectorAll('.gdsList_filter_tit');
+        let filterEl = document.querySelectorAll('.gdsList_filter_con ul li label');
+        let swiperFilterWrap = document.querySelector('.swiper_add_filter .swiper-wrapper');
+        let clearFilter = document.querySelector('.filter_clear');
+        let addFilter = document.querySelectorAll('.filter_add button');
+
+        // filter on/off
         fSwitch.addEventListener('click', function() {
             if(fSwitch.checked) {
                 filter.classList.add('active');
@@ -323,33 +335,61 @@ export default {
         })
 
         // filter accordion
-        let filterTit = document.querySelectorAll('.gdsList_filter_tit');
         for(let i = 0; i < filterTit.length; i++) {
             filterTit[i].addEventListener('click', function(e) {
                 e.target.parentNode.classList.toggle('on');
             })
         }
 
-        // filter remove
-        let addFilter = document.querySelectorAll('.filter_add button')
+        // choice filter
+        for(let i = 0; i < filterEl.length; i++) {
+            filterEl[i].addEventListener('click', function() {
+                let swiperFilterDiv = document.createElement('div');
+                let swiperFilterSpan = document.createElement('span');
+                let swiperFilterClose = document.createElement('button');
+                swiperFilterClose.setAttribute('type', 'button');
+                let filterElTxt = filterEl[i].innerHTML;
+                swiperFilterSpan.innerHTML = filterElTxt;
+                swiperFilterDiv.append(swiperFilterSpan, swiperFilterClose);
+                swiperFilterWrap.append(swiperFilterDiv);
+                let colorEl = filterEl[i].closest('.gdsList_filter_item');
+                let filterElCls = filterEl[i].classList;
+
+                // colorchip 
+                if(colorEl.classList.contains('color')) {
+                    swiperFilterDiv.classList.add('swiper-slide', 'filter_add', 'colorChip');
+                    swiperFilterDiv.firstChild.classList.add(filterElCls);
+                } else {
+                    swiperFilterDiv.classList.add('swiper-slide', 'filter_add');
+                }
+            })
+        }
+
+        // choice filter clear
+        clearFilter.addEventListener('click', function() {
+            swiperFilterWrap.replaceChildren();
+            filterEl.forEach((e) => {
+                e.previousSibling.checked = false;
+            })
+        })
+
+        // choice filter remove
         for (let i = 0; i < addFilter.length; i++) {
             addFilter[i].addEventListener('click', function(e) {
-                e.target.parentNode.style.display="none";
+                e.target.parentNode.remove();
+                console.log("노드 제거")
             })
         }
     },
-
-    setup() {
-        const onSwiper = (swiper) => {
-            console.log(swiper);
-        };
-        const onSlideChange = () => {
-            console.log("slide change");
-        };
-        return {
-            onSwiper,
-            onSlideChange,
-        }
-    }
 }
 </script>
+
+<!-- 2024-01-04 상품 리스트 페이지 정리 -->
+<!-- 
+    이슈 및 개선 사항
+    1. append로 추가한 필터 제거 동작 안됨
+    2. append로 추가한 필터 슬라이드 동작 안됨
+    ※ vue로 태그 생성 시 2가지 동작 모두 작동 확인됨
+
+    3. 필터 중복되는 현상 수정
+-->

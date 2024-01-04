@@ -30,7 +30,7 @@
                                 <div class="search_inpWrap">
                                     <input type="search" class="inp search_inp">
                                     <span data-placeholder="상품을 찾아보세요."></span>
-                                    <font-awesome-icon icon="xmark" />
+                                    <button type="button" class="btn_clear"><span>검색어 제거</span></button>
                                 </div>
                                 <div class="search_con">
                                     <div class="search_keyword">
@@ -223,10 +223,36 @@ export default {
                 let header = document.querySelector('.header');
                 if (scrollY > mTop) {
                     header.classList.add('active')
+                    let searchBtn = document.querySelector('#search');
+                    searchBtn.addEventListener('click', function() {
+                        header.classList.add('active');
+                    })
                 } else {
                     header.classList.remove('active')
                 }
             }
+        })
+
+        // 검색어 입력 시 초기화 버튼 추가
+        let searchInp = document.querySelector('.search_inp');
+        let searchClear = document.querySelector('.btn_clear');
+        searchInp.addEventListener('keydown', function() {
+            // searchClear.classList.add('on');
+            searchClear.setAttribute('class','on');
+        })
+
+        // 검색 input focus out시 검색어 초기화
+        searchInp.addEventListener('change', function() {
+            searchInp.value = null;
+            // searchClear.classList.remove('on');
+            searchClear.removeAttribute('class','on');
+        })
+
+        // 검색어 초기화 버튼
+        searchClear.addEventListener('click', function() {
+            searchInp.value = null;
+            // searchClear.classList.remove('on');
+            searchClear.removeAttribute('class','on');
         })
     }
 }
