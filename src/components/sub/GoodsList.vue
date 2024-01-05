@@ -45,11 +45,10 @@
                         @slideChange="onSlideChange"
                         class="swiper_add_filter"
                     >
-                        <swiper-slide v-for="(el, filSlide) in filterSlide" :key="filSlide" :class="{ colorChip: el.colorChip }" class="filter_add">
+                        <!-- <swiper-slide v-for="(el, filSlide) in filterSlide" :key="filSlide" :class="{ colorChip: el.colorChip }" class="filter_add">
                             <span :class="el.color">{{ el.filter }}</span>
-                            <!-- <button type="button" @click="remove"><span>필터 제거</span></button> -->
                             <button type="button"><span>필터 제거</span></button>
-                        </swiper-slide>
+                        </swiper-slide> -->
                     </swiper>
                 </div>
                 <div class="gdsList_con_thumb">
@@ -82,6 +81,18 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 export default {
     name: 'GoodsList',
+    setup() {
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log("slide change");
+        };
+        return {
+            onSwiper,
+            onSlideChange,
+        }
+    },
     components: {
         Swiper,
         SwiperSlide,
@@ -299,19 +310,6 @@ export default {
         ]
     }),
 
-    methods: {
-        open() {
-            this.isOpen = !this.isOpen;
-        },
-
-        // goods like check
-        like(e) {
-            const idx = e.target.getAttribute('index');
-            e.target.classList.toggle('on');
-            console.log("like 활성화 : " + idx)
-        }
-    },
-
     mounted() {
         // variable gather
         let filter = document.querySelector('.gdsList_filter');
@@ -380,6 +378,19 @@ export default {
                 console.log("노드 제거")
             })
         }
+    },
+
+    methods: {
+        open() {
+            this.isOpen = !this.isOpen;
+        },
+
+        // goods like check
+        like(e) {
+            const idx = e.target.getAttribute('index');
+            e.target.classList.toggle('on');
+            console.log("like 활성화 : " + idx)
+        },
     },
 }
 </script>
