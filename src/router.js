@@ -30,16 +30,6 @@ const routes = [
         name: "ProductDetail",
         component: ProductDetail
     }
-    // {
-    //     path: "/test2",
-    //     name: "TestComponent2",
-    //     component: TestComponent2
-    // },
-    // {
-    //     path: "/test3",
-    //     name: "TestComponent3",
-    //     component: TestComponent3
-    // },
 ]
 
 // 라우터 생성

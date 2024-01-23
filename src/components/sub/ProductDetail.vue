@@ -65,7 +65,7 @@
                         <div class="prdDetail_rdo_box">
                             <div class="rdo size_rdo" v-for="(el, rdo) in rdo2" :key="rdo">
                                 <input type="radio" :id="el.id" name="rdo2" :disabled="el.disabled">
-                                <label :for="el.for">{{ el.label }}</label>
+                                <label :for="el.for" @click="disAlert">{{ el.label }}</label>
                             </div>
                         </div>
                         <span>[필수] 옵션을 선택해 주세요</span>
@@ -217,6 +217,7 @@
                 
                 <!-- 상품문의 -->
                 <div v-if="currentTab === 3">
+
                 </div>
                 
                 <!-- 배송/환불 -->
@@ -233,7 +234,11 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs'
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript';
+import hljsVuePlugin from "@highlightjs/vue-plugin";
 import { Autoplay, Navigation, Thumbs, EffectFade } from 'swiper/modules'
+hljs.registerLanguage('javascript', javascript);
 export default {
     name: 'ProductDetail',
     components: {
@@ -541,6 +546,9 @@ export default {
             // this.sum = parseInt(this.sum - priceLocale);
             this.sum = this.sum - price;
         },
+        disAlert: function() {
+            
+        }
     },
 
     mounted() {

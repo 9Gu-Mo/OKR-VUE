@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+    li {
+        font-size: 20px;
+        border-radius: 4px;
+        transition: all 0.3s;
+        button {
+            width: 45px;
+            height: 45px;
+        }
+        &:first-child {
+            font-size: 0;
+            button {
+                background: url('/src/assets/images/icon/ico_pagination_prev.png') no-repeat center;
+            }
+        }
+        &:last-child {
+            font-size: 0;
+            button {
+                background: url('/src/assets/images/icon/ico_pagination_next.png') no-repeat center;
+            }
+        }
+        &.active, &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}
