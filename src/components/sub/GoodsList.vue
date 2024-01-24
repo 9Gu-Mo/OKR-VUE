@@ -5,7 +5,6 @@
                 <h3>FILTER</h3>
                 <ul class="gdsList_filter_wrap">
                     <li class="gdsList_filter_item js_filter-toggle" v-for="(el, index) in list" :key="index" :class="{ color: el.chkColor, on:isOpen }">
-                        <!-- <p class="gdsList_filter_tit" @click="open">{{ el.tit }}</p> -->
                         <p class="gdsList_filter_tit">{{ el.tit }}</p>
                         <div class="gdsList_filter_con">
                             <ul>
@@ -26,26 +25,28 @@
                         <img :src="el.img" :alt="el.alt">
                     </a>
                 </div>
-                <div class="gdsList_con_tit">
-                    <h3>MEN</h3>
-                    <div class="filter_switch">
-                        <p>필터 ON/OFF</p>
-                        <label for="switch">
-                            <input type="checkbox" id="switch">
-                            <span></span>
-                        </label>
+                <div class="gdsList_con_wrap">
+                    <div class="gdsList_con_tit">
+                        <h3>MEN</h3>
+                        <div class="filter_switch">
+                            <p>필터 ON/OFF</p>
+                            <label for="switch">
+                                <input type="checkbox" id="switch">
+                                <span></span>
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="gdsList_con_apply">
-                    <button type="button" class="filter_clear">필터 초기화</button>
-                    <swiper
+                    <div class="gdsList_con_apply">
+                        <button type="button" class="filter_clear">필터 초기화</button>
+                        <swiper
                         :space-between="5"
-                        :slides-per-view="auto"
+                        :slidesPerView="'auto'"
                         @swiper="onSwiper"
                         @slideChange="onSlideChange"
                         class="swiper_add_filter"
-                    >
-                    </swiper>
+                        >
+                        </swiper>
+                    </div>
                 </div>
                 <div class="gdsList_con_thumb">
                     <div v-for="(el, index) in gdsList" :key="index">
@@ -144,7 +145,6 @@ export default {
                     {
                         chkLabel: '스트레이트',
                         id: 'chk02-1',
-                        colorChip: 'test',
                     },
                     {
                         chkLabel: '스키니',
@@ -369,12 +369,9 @@ export default {
         }
 
         // choice filter remove
-        // document.addEventListener('DOMContentLoaded', function() {
-        //     let rmBtn = document.querySelector('.filter_add button');
-        //     rmBtn.addEventListener('click', function() {
-        //         alert("ss")
-        //     })
-        // })
+        this.$nextTick(function() {
+            
+        })
 
         // choice filter all remove
         clearFilter.addEventListener('click', function() {
@@ -400,12 +397,9 @@ export default {
 }
 </script>
 
-<!-- 2024-01-04 상품 리스트 페이지 정리 -->
+<!-- 2024-01-24 상품 리스트 페이지 정리 -->
 <!-- 
     이슈 및 개선 사항
-    1. append로 추가한 필터 제거 동작 안됨
-    2. append로 추가한 필터 슬라이드 동작 안됨
-    ※ vue로 태그 생성 시 2가지 동작 모두 작동 확인됨
-
-    3. 필터 선택 중복되는 현상 수정
+    1. append로 추가한 필터 제거 동작 안됨(vue로 태그 생성 시 작동 정상적으로 확인됨)
+    2. vanilla js, scss 코드 줄이기
 -->

@@ -149,7 +149,7 @@
     }
     &_banner {
         display: flex;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         a {
             display: block;
             img {
@@ -157,8 +157,18 @@
             }
         }
     }
+    &_wrap {
+        position: sticky;
+        top: 99px;
+        background-color: #fff;
+        z-index: 10;
+        padding: 10px;
+    }
     &_tit {
-        position: relative;
+        // position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         h3 {
             color: #1a1a1a;
             font-size: 20px;
@@ -167,9 +177,9 @@
             font-weight: 500;
         }
         .filter_switch {
-            position: absolute;
-            top: 0;
-            right: 0;
+            // position: absolute;
+            // top: 0;
+            // right: 0;
             display: flex;
             align-items: center;
             p {
@@ -221,29 +231,22 @@
         }
     }
     &_apply {
-        margin: 10px 0;
         font-size: 0;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        gap: 20px;
         height: 27px;
         > button {
             font-size: 13px;
             color: #1a1a1a;
             font-weight: 500;
             background: url('/src/assets/images/icon/ico_refresh.png') no-repeat center left / 14px 17px;
-            // display: inline-block;
             padding: 2px 0 2px 20px;
-            // vertical-align: middle;
+            word-break: keep-all;
         }
         .swiper {
-            // display: inline-block;
-            margin-left: 20px;
-            width: calc(100% - 103px);
-            // vertical-align: middle;
             margin: 0;
             .swiper-slide {
-                display: inline-block;
                 color: #1a1a1a;
                 font-size: 15px;
                 padding: 5px 25px 5px 12px;
@@ -251,10 +254,8 @@
                 border: 1px solid #1a1a1a;
                 text-transform: uppercase;
                 position: relative;
-                transition: all 0.3s;
-                width: auto !important;
                 box-sizing: border-box;
-                margin-right: 5px;
+                width: auto !important;
                 &.colorChip {
                     font-size: 0;
                     span {
