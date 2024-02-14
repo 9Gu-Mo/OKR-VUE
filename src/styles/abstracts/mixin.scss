@@ -1,3 +1,8 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
+@use 'functions' as f;
+
 // 말줄임 mixin
 @mixin ellipsis($line: 1) {
     @if ($line == 1) {

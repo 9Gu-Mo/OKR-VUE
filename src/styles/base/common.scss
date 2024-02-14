@@ -1,0 +1,10 @@
+@use '../abstracts/absForward' as a;
+
+// Noto Sans
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-Thin', 100, normal, woff2 woff);
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-Light', 200, normal, woff2 woff);
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-DemiLight', 300, normal, woff2 woff);
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-Regular', 400, normal, woff2 woff);
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-Medium', 500, normal, woff2 woff);
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-Bold', 700, normal, woff2 woff);
+@include a.font-face('Noto Sans KR', '@/assets/fonts/NotoSans/NotoSans-Black', 900, normal, woff2 woff);

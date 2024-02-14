@@ -56,7 +56,6 @@
                         <div class="gd_list_desc">
                             <div class="gd_list_name">
                                 <strong>{{ el.name }}</strong>
-                                <!-- <button type="button" @click="like()" class="gd_list_name_like" :class="{on:isBind}"><span>찜하기</span></button> -->
                                 <button type="button" @click="like" class="gd_list_name_like" :index="index"><span>찜하기</span></button>
                             </div>
                             <div class="gd_list_pri">
@@ -402,4 +401,7 @@ export default {
     이슈 및 개선 사항
     1. append로 추가한 필터 제거 동작 안됨(vue로 태그 생성 시 작동 정상적으로 확인됨)
     2. vanilla js, scss 코드 줄이기
+
+    추가 기능
+    1. 상품 페이지 네이션 기능 추가
 -->
